@@ -22,3 +22,5 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: execution of jar file
+      run: sudo kill -9 `sudo lsof -t -i:8181` & sudo java -jar /home/ubuntu/actions-runner/_work/spring-boot-with-github-ci/spring-boot-with-github-ci/target/spring-boot-with-github.jar &
